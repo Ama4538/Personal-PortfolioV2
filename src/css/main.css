@@ -10,6 +10,13 @@
     Extra
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-font: "Bebas Neue", sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -31,15 +38,18 @@ header {
 
 .header-content--primary {
     display: grid;
-    grid-template-rows: 0.3fr 1fr 1fr;
-    grid-gap: 1.5rem;
+    grid-template-rows: 0.20fr 1fr 1fr;
 }
 
 .header-content__title--primary {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-family: var(--primary-font);
+    font-size: 6rem;
+    font-weight: 500;
+    letter-spacing: 0.5rem;
+    line-height: 1;
 }
 
 .header-content__about--primary, 
@@ -47,15 +57,17 @@ header {
 .header-content__resume--primary,
 .header-content__projects--secondary {
     border-radius: 2rem;
+    cursor: pointer;
 }
 
 .header-content__about--primary {
+    margin-bottom: 1.5rem;
     background-color: red;
 }
 
 .header-content__wrapper--primary{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr .75fr;
     grid-gap: 1.5rem;
 }
 
@@ -73,7 +85,7 @@ header {
 }
 
 .header-content__projects--secondary {
-    background-color: purple;
+    background-color: red;
 }
 
 /* Nav */
@@ -92,8 +104,36 @@ nav {
 
 .nav__item {
     margin: 1rem 0 1rem 1rem;
-    font-size: 1.5rem;
+    font-family: var(--secondary-font);
+    font-size: 1.25rem;
+    font-weight: 600;
     writing-mode: vertical-rl;
     cursor: pointer;
 }
 
+/* Section defaults */
+
+.projects,
+.about,
+.contact {
+    height: max-content;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Project Section */
+
+.projects {
+    background-color: aquamarine;
+}
+
+/* About */
+
+.about{
+    background-color: purple;
+}
+
+/* Contact */
+.contact {
+    background-color: brown;
+}
