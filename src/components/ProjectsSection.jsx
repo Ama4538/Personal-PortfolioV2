@@ -1,6 +1,6 @@
 function ProjectsSection(){
     return (
-        <section className = "projects"></section>
+        <section className = "projects" id = "ProjectsSection"></section>
     )
 }
 

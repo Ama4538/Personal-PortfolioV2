@@ -1,6 +1,6 @@
 function AboutSection(){
     return (
-        <section className = "about"></section>
+        <section className = "about" id = "AboutSection"></section>
     )
 }
 
