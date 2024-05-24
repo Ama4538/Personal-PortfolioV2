@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from "framer-motion"
 
+// Prop is the amount of projects
 function HeadSection(props) {
     const navElements = ["Home", "Projects", "About", "Contact"];
 
