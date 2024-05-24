@@ -1,0 +1,45 @@
+{
+    "projects": [
+        {
+            "name": "placeholder",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vestibulum sem. Etiam sit amet cursus metus, sit amet euismod nunc. Ut ac nisi at nisi consectetur accumsan. Nunc malesuada, massa a facilisis dictum, mauris est elementum lectus, vel consequat nisi massa id augue. Proin",
+            "tags": ["React", "JS", "HTML"],
+            "image": "test.jpg",
+            "liveLink" : "https://ama4538.github.io/Personal-Portfolio/",
+            "codeLink" :  "https://github.com/Ama4538/Personal-Portfolio"
+        },
+        {
+            "name": "placeholder",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vestibulum sem. Etiam sit amet cursus metus, sit amet euismod nunc. Ut ac nisi at nisi consectetur accumsan. Nunc malesuada, massa a facilisis dictum, mauris est elementum lectus, vel consequat nisi massa id augue. Proin",
+            "tags": ["React", "JS", "HTML"],
+            "image": "test.jpg",
+            "liveLink" : null,
+            "codeLink" :  "https://github.com/Ama4538/Personal-Portfolio"
+        },
+        {
+            "name": "placeholder",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vestibulum sem. Etiam sit amet cursus metus, sit amet euismod nunc. Ut ac nisi at nisi consectetur accumsan. Nunc malesuada, massa a facilisis dictum, mauris est elementum lectus, vel consequat nisi massa id augue. Proin",
+            "tags": ["React", "JS", "HTML"],
+            "image": "test.jpg",
+            "liveLink" : null,
+            "codeLink" :  "https://github.com/Ama4538/Personal-Portfolio"
+        },
+        {
+            "name": "placeholder",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vestibulum sem. Etiam sit amet cursus metus, sit amet euismod nunc. Ut ac nisi at nisi consectetur accumsan. Nunc malesuada, massa a facilisis dictum, mauris est elementum lectus, vel consequat nisi massa id augue. Proin",
+            "tags": ["React", "JS", "HTML"],
+            "image": "test.jpg",
+            "liveLink" : null,
+            "codeLink" :  "https://github.com/Ama4538/Personal-Portfolio"
+        },
+        {
+            "name": "placeholder",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis vestibulum sem. Etiam sit amet cursus metus, sit amet euismod nunc. Ut ac nisi at nisi consectetur accumsan. Nunc malesuada, massa a facilisis dictum, mauris est elementum lectus, vel consequat nisi massa id augue. Proin",
+            "tags": ["React", "JS", "HTML"],
+            "image": "test.jpg",
+            "liveLink" : null,
+            "codeLink" :  "https://github.com/Ama4538/Personal-Portfolio"
+        }
+        
+    ]
+}

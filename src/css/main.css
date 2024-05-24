@@ -30,8 +30,8 @@
 
 header {
     display: grid;
-    grid-template-columns: 1fr 1fr 0.1fr;
-    padding: max(3.25vmax, 3rem) 0 max(3.25vmax, 3rem) max(3.25vmax, 3rem);
+    grid-template-columns: 1fr 1fr;
+    padding: max(3.5vmax, 3.25rem);
     height: 100vh;
 }
 
@@ -72,7 +72,7 @@ header {
 
 .header-content__wrapper {
     display: grid;
-    grid-gap: max(2.25vmax, 1.5rem);
+    gap: max(2.25vmax, 1.5rem);
     grid-template-columns: 1fr .75fr;
 }
 
@@ -134,6 +134,7 @@ header {
 
 nav {
     position: fixed;
+    right: 1%;
     display: flex;
     align-items: center;
     height: 85%;
@@ -165,13 +166,62 @@ nav {
 .projects,
 .about,
 .contact {
-    height: 100vh;
+    padding: max(3.5vmax, 3.25rem);
+    min-height: 100vh;
 }
 
 /* Project Section */
 
 .projects {
     background-color: aquamarine;
+}
+
+.projects__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: max(2.25vmax, 1.5rem);;
+}
+
+.project__card,
+.project__card--front,
+.project__card--back {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.project__card--front,
+.project__card--back {
+    padding: max(2vmax, 1.5rem);
+}
+
+.project__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+    
+    transform-style: preserve-3d;
+}
+
+
+.project__card--front{
+    z-index: 1;
+    color: wheat;
+    backface-visibility: hidden;
+}
+
+.project__card--back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px red solid;
+    background-color: white;
+    transform: rotate3D(1, 1, 0, 180deg)
+}
+
+.project__card--description {
+    
 }
 
 /* About */
