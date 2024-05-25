@@ -1,14 +1,23 @@
 import { useState } from "react";
-import { easeInOut, motion } from "framer-motion";
 
 // Prop is a array of project objects
 function ProjectsSection(props) {
     // State to manage which card is currently flipped
-    const [activeIndex, setActiveIndex] = useState(null)
+    const [activeIndex, setActiveIndex] = useState([])
 
-    // handle the change in flip status
+    // handle the flip status
     function updateActiveStatus(index) {
-        setActiveIndex(index === activeIndex ? null : index);
+        setActiveIndex(prevIndexes => {
+            // Check if current index is active
+            if (prevIndexes.includes(index)) {
+                //Remove from active
+                return prevIndexes.filter(element => element !== index)
+            } else {
+                // Added into active
+                return [...prevIndexes, index]
+            }
+        }
+        );
     }
 
     return (
@@ -18,20 +27,10 @@ function ProjectsSection(props) {
                 {/* Going through each data in the JSON to add project card */}
                 {props.projectArray.map((card, index) => {
                     return (
-                        <motion.div
-                            className="project__card"
+                        <div
+                            className={`project__card ${activeIndex.includes(index) ? 'project__card--actived' : 'deactived'}`}
                             key={index}
                             onClick={() => updateActiveStatus(index)}
-                            // Add the flipping animation if index matches active status
-                            animate={activeIndex === index ? {
-                                transform: `rotate3D(1, 1, 0, 180deg)`
-                            } : {
-                                transform: `rotate3D(0, 0, 0, 0)`
-                            }}
-                            transition={{
-                                duration: 0.35,
-                                ease: easeInOut
-                            }}
                         >
                             {/* Front of the card */}
                             <div className="project__card--front" style={{ backgroundImage: `url(projectImage/${card.image})` }}>
@@ -46,7 +45,7 @@ function ProjectsSection(props) {
                                 <div className="project__card--tagWrapper">
                                     {/* Going through tag array to add tag for each card */}
                                     {card.tags.map((tag, index) => {
-                                        return <div className="project__card--tag"> {tag} </div>
+                                        return <div className="project__card--tag" key={index}> {tag} </div>
                                     })}
                                 </div>
                                 <div className="project__card--linkWrapper">
@@ -56,7 +55,7 @@ function ProjectsSection(props) {
                                 </div>
 
                             </div>
-                        </motion.div>
+                        </div>
                     )
                 })}
             </div>
