@@ -284,8 +284,10 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--secondary-font);
     transform: rotate3d(1, 1, 0, 180deg);
-    ;
 }
 
 .project__card--backBlur {
@@ -295,6 +297,8 @@ nav {
     z-index: -1;
     height: 100%;
     width: 100%;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.1);
     filter: blur(7px);
 }
 
@@ -308,7 +312,40 @@ nav {
     text-transform: capitalize;
 }
 
-.project__card--description {}
+.project__card--description {
+    margin-top: 0.5rem;
+    overflow-y: auto;
+}
+
+.project__card--tagWrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.project__card--tag {
+    padding: 0.5rem 1rem;
+    background-color: yellowgreen;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.project__card--linkWrapper {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.project__card--linkWrapper>a {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    font-size: max(1.5vmax, 1.5rem);
+    background-color: violet;
+    border-radius: 0.5rem;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
 
 /* Project Animation */
 
@@ -320,7 +357,7 @@ nav {
 /* About */
 
 .about {
-    background-color: purple;
+    background-color:wheat;
 }
 
 /* Contact */

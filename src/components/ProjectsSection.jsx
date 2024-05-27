@@ -45,13 +45,13 @@ function ProjectsSection(props) {
                                 <div className="project__card--tagWrapper">
                                     {/* Going through tag array to add tag for each card */}
                                     {card.tags.map((tag, index) => {
-                                        return <div className="project__card--tag" key={index}> {tag} </div>
+                                        return <p className="project__card--tag" key={index}> {tag} </p>
                                     })}
                                 </div>
-                                <div className="project__card--linkWrapper">
+                                <div className="project__card--linkWrapper" style={{gridTemplateColumns: card.liveLink != null ? '1fr 1fr' : '1fr'}}>
                                     {/* Determines if live link should be added into card */}
-                                    {(card.liveLink != null) && <a href={card.liveLink} target="_blank">Click to view Live</a>}
-                                    <a href={card.codeLink} target="_blank">Click to view code</a>
+                                    {(card.liveLink != null) && <a href={card.liveLink} target="_blank">Live</a>}
+                                    <a href={card.codeLink} target="_blank">Code</a>
                                 </div>
 
                             </div>
