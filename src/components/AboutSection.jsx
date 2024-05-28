@@ -1,6 +1,8 @@
-function AboutSection(){
+function AboutSection() {
     return (
-        <section className = "about" id = "AboutSection"></section>
+        <section  className="about" id="AboutSection">
+            
+        </section>
     )
 }
 

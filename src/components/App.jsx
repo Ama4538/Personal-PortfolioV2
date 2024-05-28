@@ -8,7 +8,7 @@ function App() {
 
 
     return (
-        <>
+        <>  
             <HeadSection projectAmount = {project.projects.length}></HeadSection>
             <ProjectsSection projectArray = {project.projects}></ProjectsSection>
             <AboutSection></AboutSection>

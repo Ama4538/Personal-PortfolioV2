@@ -48,10 +48,10 @@ function ProjectsSection(props) {
                                         return <p className="project__card--tag" key={index}> {tag} </p>
                                     })}
                                 </div>
-                                <div className="project__card--linkWrapper" style={{gridTemplateColumns: card.liveLink != null ? '1fr 1fr' : '1fr'}}>
+                                <div className="project__card--linkWrapper" style={{ gridTemplateColumns: card.liveLink != null ? '1fr 1fr' : '1fr' }}>
                                     {/* Determines if live link should be added into card */}
-                                    {(card.liveLink != null) && <a href={card.liveLink} target="_blank">Live</a>}
-                                    <a href={card.codeLink} target="_blank">Code</a>
+                                    {(card.liveLink != null) && <a className="project__card--link" href={card.liveLink} target="_blank">Live</a>}
+                                    <a className="project__card--link" href={card.codeLink} target="_blank">Code</a>
                                 </div>
 
                             </div>
