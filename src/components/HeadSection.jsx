@@ -34,7 +34,7 @@ function HeadSection(props) {
                         return (
                             <li className="nav__item" key={index}>
                                 {/* added navigation on click */}
-                                <a href={`#${element}Section`}>
+                                <a className="nav__item-link" href={`#${element}Section`}>
                                     {element}
                                 </a>
                             </li>

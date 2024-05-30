@@ -27,35 +27,34 @@ function ProjectsSection(props) {
                 {/* Going through each data in the JSON to add project card */}
                 {props.projectArray.map((card, index) => {
                     return (
-                        <div
-                            className={`project__card ${activeIndex.includes(index) ? 'project__card--actived' : 'deactived'}`}
+                        <article
+                            className={`project-card ${activeIndex.includes(index) ? 'project-card--actived' : 'deactived'}`}
                             key={index}
                             onClick={() => updateActiveStatus(index)}
                         >
                             {/* Front of the card */}
-                            <div className="project__card--front" style={{ backgroundImage: `url(projectImage/${card.image})` }}>
-                                <h3 className="project__card--title">{card.name}</h3>
+                            <div className="project-card__front" style={{ backgroundImage: `url(projectImage/${card.image})` }}>
+                                <h3 className="project-card__title">{card.name}</h3>
                             </div>
                             {/* Back of the card */}
-                            <div className="project__card--back" >
+                            <div className="project-card__back" >
                                 {/* Div used to managed blur of background */}
-                                <div className="project__card--backBlur" style={{ backgroundImage: `url(projectImage/${card.image})` }}></div>
-                                <h3 className="project__card--title">{card.name}</h3>
-                                <p className="project__card--description">{card.description}</p>
-                                <div className="project__card--tagWrapper">
+                                <div className="project-card__back-blur" style={{ backgroundImage: `url(projectImage/${card.image})` }}></div>
+                                <h3 className="project-card__title">{card.name}</h3>
+                                <p className="project-card__description">{card.description}</p>
+                                <ul className="project-card__tag-wrapper">
                                     {/* Going through tag array to add tag for each card */}
                                     {card.tags.map((tag, index) => {
-                                        return <p className="project__card--tag" key={index}> {tag} </p>
+                                        return <li className="project-card__tag" key={index}> <p> {tag} </p> </li>
                                     })}
-                                </div>
-                                <div className="project__card--linkWrapper" style={{ gridTemplateColumns: card.liveLink != null ? '1fr 1fr' : '1fr' }}>
+                                </ul>
+                                <ul className="project-card__link-wrapper" style={{ gridTemplateColumns: card.liveLink != null ? '1fr 1fr' : '1fr' }}>
                                     {/* Determines if live link should be added into card */}
-                                    {(card.liveLink != null) && <a className="project__card--link" href={card.liveLink} target="_blank">Live</a>}
-                                    <a className="project__card--link" href={card.codeLink} target="_blank">Code</a>
-                                </div>
-
+                                    {(card.liveLink != null) && <li> <a className="project-card__link" href={card.liveLink} target="_blank">Live</a></li>}
+                                    <li><a className="project-card__link" href={card.codeLink} target="_blank">Code</a> </li>
+                                </ul>
                             </div>
-                        </div>
+                        </article>
                     )
                 })}
             </div>
