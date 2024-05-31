@@ -3,7 +3,7 @@
         {
             "name": "E-commerce (WIP)",
             "description": "A E-commerce web page still in development. A webpage involving a shopping cart with each unique tabs for each section",
-            "tags": ["React"],
+            "tags": ["React", "CSS"],
             "image": "E-commerce.png",
             "liveLink" : "https://e-commerce-kevin-lys-projects.vercel.app",
             "codeLink" :  "https://github.com/Ama4538/Shopping-Cart"
