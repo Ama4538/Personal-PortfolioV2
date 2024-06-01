@@ -42,9 +42,6 @@ function HeadSection(props) {
                     variants={startUp}
                     initial="init"
                     animate="animation"
-                    transition={{
-                        duration: 0.5
-                    }}
                 >
                     {titleArray.map((letter, index) => {
                         {/* Wave Animation */ }
@@ -60,9 +57,7 @@ function HeadSection(props) {
                                 delay: 0.5 + index * 0.1,
                                 ease: easeInOut
                             }}
-                        >
-                            {letter}
-                        </motion.span>
+                        >{letter}</motion.span>
                     })}
                 </motion.h1>
 
@@ -73,9 +68,7 @@ function HeadSection(props) {
                     variants={startUp}
                     initial="init"
                     animate="animation"
-                >
-                    <span>About</span>
-                </motion.a>
+                ><span>About</span></motion.a>
                 <div className="header-content__wrapper">
 
                     {/* Email Box */}
@@ -86,8 +79,7 @@ function HeadSection(props) {
                         variants={startUp}
                         initial="init"
                         animate="animation"
-                    >
-                    </motion.a>
+                    ></motion.a>
 
                     {/* Resume Box */}
                     <motion.a
@@ -97,8 +89,7 @@ function HeadSection(props) {
                         variants={startUp}
                         initial="init"
                         animate="animation"
-                    >
-                    </motion.a>
+                    > </motion.a>
                 </div>
             </div>
             <div className="header-content--secondary">

@@ -354,8 +354,8 @@ nav {
 
 .projects,
 .about {
-    padding: max(3.5vmax, 3.25rem) max(3.75vmax, 3.25rem);
-    padding-top: max(1.75vmax, 1.5rem);
+    margin-top: max(1.75vmax, 1.5rem);
+    padding: 0 max(3.5vmax, 3.25rem) max(3.75vmax, 3.25rem);
     min-height: 100dvh;
 }
 
@@ -420,7 +420,7 @@ nav {
 
 .project-card__front,
 .project-card__back,
-.project-card__backBlur {
+.project-card__back-blur {
     padding: max(2vmax, 1.5rem);
     border-radius: 1rem;
 }
@@ -460,7 +460,7 @@ nav {
     background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.1);
     border: var(--text-color) 3px solid;
-    filter: blur(7px);
+    filter: blur(5px);
 }
 
 .project-card__title,
