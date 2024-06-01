@@ -21,9 +21,9 @@
     --secondary-font: 'Montserrat', sans-serif;
 
     /* Colors */
-    --primary-color: #B065D9;
-    --secondary-color: #9084E1;
-    --accent-color: #3DD09D;
+    --primary-color: #fa7aa6;
+    --secondary-color: #fa92ac;
+    --accent-color: #fbc3b8;
     --background-color: #FEFCFB;
     --text-color: #1E100B;
     --secondary-text-color: #F5F5F5;
@@ -63,7 +63,7 @@ header {
 
 .header-content__wrapper {
     display: grid;
-    grid-template-columns: 1fr .75fr;
+    grid-template-columns: 1fr 1fr;
     gap: max(2.25vmax, 1.5rem);
 }
 
@@ -79,30 +79,89 @@ header {
 }
 
 .header-content__about,
-.header-content__contact,
+.header-content__email,
 .header-content__resume,
 .header-content__projects {
     position: relative;
     border-radius: 2rem;
+    box-shadow: 0 0.5rem 0.5rem -0.5rem var(--text-color);
     cursor: pointer;
     overflow: hidden;
 }
 
 .header-content__about {
+    display: grid;
+    place-items: center;
     margin-bottom: max(2.25vmax, 1.5rem);
-    background-color: var(--primary-color);
-}
-
-.header-content__contact {
+    font-family: var(--secondary-font);
+    font-size: max(6.5vmax, 5.5rem);
+    font-weight: 500;
     background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-decoration: none;
 }
 
-.header-content__resume {
+.header-content__about>span {
+    position: relative;
+    z-index: 2;
+    padding-left: max(3vmax, 2.5rem);
+}
+
+.header-content__about>span::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: max(7vmax, 6rem);
+    width: max(7vmax, 6rem);
+    background: url(/icons/about.svg) no-repeat center / contain;
+    content: '';
+    translate: -50% -50%;
+}
+
+.header-content__email {
+    position: relative;
     background-color: var(--accent-color);
 }
 
-.header-content__projects {
+.header-content__email::after,
+.header-content__resume::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 75%;
+    width: 60%;
+    content: '';
+    translate: -50% -50%;
+}
+
+.header-content__email::after {
+    background: url(/icons/email-home.svg) no-repeat center / contain;
+}
+
+.header-content__resume {
+    position: relative;
     background-color: var(--secondary-color);
+}
+
+.header-content__resume::after {
+    left: 52.5%;
+    background: url(/icons/resume.svg) no-repeat center / contain;
+}
+
+.header-content__projects {
+    display: grid;
+    place-items: center;
+    background-color: var(--primary-color);
+}
+
+.header-content__projects-image {
+    height: 97.5%;
+    width: 97.5%;
+    background: url(/project-collage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    border-radius: 2rem;
 }
 
 .header-content__projectCounter {
@@ -114,11 +173,11 @@ header {
     height: max(8vmax, 7.5rem);
     font-family: var(--primary-font);
     font-size: min(7vmax, 5rem);
-    font-weight: 500;
+    font-weight: 700;
     aspect-ratio: 1 / 1;
-    background-color: black;
+    background-color: var(--background-color);
     border-radius: 100%;
-    color: white;
+    color: var(--text-color);
     cursor: pointer;
     line-height: 0.9;
 }
@@ -129,7 +188,7 @@ header {
     position: absolute;
     height: max(8vmax, 7.5rem);
     aspect-ratio: 1 / 1;
-    border: dashed white 2px;
+    border: dashed var(--background-color) 2px;
     border-radius: 100%;
     content: '';
     opacity: 0;
@@ -137,30 +196,59 @@ header {
 }
 
 .header-content__about::before,
-.header-content__contact::before,
+.header-content__email::before,
+.header-content__resume::before,
 .header-content__projects::before {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: black;
     content: '';
     transition: ease-in-out 0.35s;
 }
 
 .header-content__about::before,
-.header-content__contact::before {
+.header-content__email::before,
+.header-content__resume::before {
+    background: linear-gradient(to right,
+            #fcf3c4,
+            #fcdbbe,
+            #fbc3b8,
+            #fbabb2,
+            #fa92ac);
     translate: -100%;
 }
 
+.header-content__email::before {
+    background: linear-gradient(to right,
+            #fcf3c4,
+            #fcdbbe,
+            #fbc3b8);
+}
+
+.header-content__resume::before {
+    background: linear-gradient(to right,
+            #fcf3c4,
+            #fcdbbe,
+            #fbc3b8,
+            #fbabb2,
+            #fa92ac);
+}
+
 .header-content__projects::before {
+    background: linear-gradient(to top,
+            #fcf3c4,
+            #fcdbbe,
+            #fbc3b8,
+            #fbabb2,
+            #fa92ac,
+            #fa7aa6);
+    opacity: 0.75;
     translate: 0 100%;
 }
 
-.header-content__about:hover::before {
-    translate: 0%;
-}
-
-.header-content__contact:hover::before {
+.header-content__about:hover::before,
+.header-content__email:hover::before,
+.header-content__resume:hover::before {
     translate: 0%;
 }
 
@@ -265,8 +353,7 @@ nav {
 /* Section defaults */
 
 .projects,
-.about,
-.contact {
+.about {
     padding: max(3.5vmax, 3.25rem) max(3.75vmax, 3.25rem);
     padding-top: max(1.75vmax, 1.5rem);
     min-height: 100dvh;
@@ -311,7 +398,7 @@ nav {
 }
 
 .projects__container {
-    display: grid;  
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: max(2.25vmax, 1.5rem);
 }
@@ -534,6 +621,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: max(1.5vmax, 1.25rem);
+    padding-right: max(2.5vmax, 2rem);
 }
 
 .about-content__text {
@@ -588,30 +676,30 @@ nav {
     translate: -50% -50%;
 }
 
-.about__skill:nth-child(1)::before {  
-    height: 65%; 
+.about__skill:nth-child(1)::before {
+    height: 65%;
     background: url('/icons/java.svg') no-repeat center / contain;
 }
 
-.about__skill:nth-child(2)::before {   
+.about__skill:nth-child(2)::before {
     height: 65%;
     background: url('/icons/js.svg') no-repeat center / contain;
 }
 
-.about__skill:nth-child(3)::before {   
+.about__skill:nth-child(3)::before {
     height: 85%;
     background: url('/icons/react.svg') no-repeat center / contain;
 }
 
-.about__skill:nth-child(4)::before {   
+.about__skill:nth-child(4)::before {
     background: url('/icons/html-5.svg') no-repeat center / contain;
 }
 
-.about__skill:nth-child(5)::before {   
+.about__skill:nth-child(5)::before {
     background: url('/icons/css.svg') no-repeat center / contain;
 }
 
-.about__skill:nth-child(6)::before {   
+.about__skill:nth-child(6)::before {
     background: url('/icons/c.svg') no-repeat center / contain;
 }
 
@@ -778,7 +866,7 @@ nav {
 .about-content__design-wrapper[data-configuration="3"]>.about-content__design-shape:nth-child(6) {
     bottom: 0;
     right: 0;
-    height: 60%;  
+    height: 60%;
 }
 
 .about-content__design-wrapper[data-configuration="3"]>.about-content__design-shape:nth-child(7) {
@@ -830,8 +918,65 @@ nav {
     border-radius: 7.5rem 0 0 0;
 }
 
-/* Contact */
+/* Footer */
 
-.contact {
-    background-color: brown;
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 0 max(3.75vmax, 3.25rem);
+    min-height: min(7.5vh, 3.5rem);
+    background-color: var(--text-color);
+}
+
+.footer-content {
+    display: flex;
+    gap: max(7vmax, 6rem);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: var(--primary-font);
+    text-decoration: none;
+}
+
+.footer-content>li {
+    transition: 0.25s ease-in-out;
+}
+
+.footer-content__links {
+    position: relative;
+    font-size: max(1.10vmax, 1rem);
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.footer-content__links::before {
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    height: 100%;
+    width: 50%;
+    content: '';
+    translate: -50% -50%;
+}
+
+.footer-content>li:nth-child(1)>.footer-content__links::before {
+    height: 140%;
+    background: url(/icons/linkedin.svg) no-repeat center / contain;
+}
+
+.footer-content>li:nth-child(2)>.footer-content__links::before {
+    left: -5.5%;
+    background: url(/icons/email.svg) no-repeat center / contain;
+}
+
+.footer-content>li:nth-child(3)>.footer-content__links::before {
+    left: -22.5%;
+    background: url(/icons/github.svg) no-repeat center / contain;
+}
+
+/* Footer Animation */
+
+.footer-content>li:hover {
+    translate: 0 -7.5%;
 }
