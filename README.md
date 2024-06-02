@@ -1,13 +1,13 @@
 ![Default Portfolio Screenshot](Image/screenshot.png)
-# Personal-PortfolioV2
 
-## Description
+# Personal-PortfolioV2
 A Personal Portfolio Website containing projects, skills, and contacts.
 
 ## Table of Contents
 - [Access](#Access)
 - [Installation](#installation)
 - [Features](#features)
+- [Tech Stack](#tech-stack)
 - [License](#license)
 
 ## Access
