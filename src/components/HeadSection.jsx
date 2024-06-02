@@ -1,9 +1,8 @@
-import { easeInOut, motion, useAnimation } from 'framer-motion'
+import { delay, easeInOut, motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react';
 
 // Prop is the amount of projects
 function HeadSection(props) {
-    const navElements = ["Home", "Projects", "About"];
     // String used to set help place span for animation
     const title = "Kevin Ly"
     const titleArray = title.split('');
@@ -20,7 +19,8 @@ function HeadSection(props) {
             y: 0,
             opacity: 1,
             transition: {
-                duration: 0.75
+                duration: 0.75,
+                delay: 0.75
             }
         }
     }
@@ -109,44 +109,6 @@ function HeadSection(props) {
                     </div>
                 </motion.a>
             </div>
-
-            {/* Nav */}
-            <nav>
-                <motion.ul
-                    className="nav__list"
-                    variants={startUp}
-                    initial="init"
-                    animate="animation"
-                >
-                    {/* Dynamically added navElement to the nav bar */}
-                    {navElements.map((element, index) => {
-                        return (
-                            // Nav appearing one by one
-                            <motion.li
-                                className="nav__item"
-                                key={index}
-                                initial={{
-                                    y: -10,
-                                    opacity: 0
-                                }}
-                                animate={{
-                                    y: 0,
-                                    opacity: 1
-                                }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: 0.75 + index * 0.35
-                                }}
-                            >
-                                {/* added navigation on click */}
-                                <a className="nav__item-link" href={`#${element}Section`}>
-                                    {element}
-                                </a>
-                            </motion.li>
-                        )
-                    })}
-                </motion.ul>
-            </nav>
         </header>
     )
 }

@@ -21,7 +21,6 @@ function AboutSection() {
         { configuration: 2, roundness: 3 },
         { configuration: 3, roundness: 1 },
         { configuration: 3, roundness: 2 },
-        { configuration: 3, roundness: 5 },
     ]
 
     // States used to help determine the current configuration
@@ -54,7 +53,7 @@ function AboutSection() {
     function randomNumGen() {
         let randomNum;
         do {
-            randomNum = Math.floor(Math.random() * 8);
+            randomNum = Math.floor(Math.random() * 7);
         } while (randomNum === lastCombinationIndex);
         return randomNum;
     }
@@ -106,6 +105,8 @@ function AboutSection() {
                     className="about-content__design-wrapper"
                     data-configuration={`${curCombination.configuration}`}
                     data-roundness={`${curCombination.roundness}`}
+                    // data-configuration= "3"
+                    // data-roundness= "2"
                     variants={startUp}
                     initial="init"
                     animate={playAnimation}

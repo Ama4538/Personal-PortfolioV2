@@ -35,7 +35,7 @@ function Footer() {
                     variants={startUp}
                     initial="init"
                     animate={playAnimation}
-                    transition = {{
+                    transition={{
                         duration: 0.3,
                     }}
                 ><a className="footer-content__links" href="https://www.linkedin.com/in/kevin-ly-6b98ba203/" target="_blank">Linkedin</a></motion.li>
@@ -43,7 +43,7 @@ function Footer() {
                     variants={startUp}
                     initial="init"
                     animate={playAnimation}
-                    transition = {{
+                    transition={{
                         duration: 0.3,
                         delay: 0.30
                     }}
@@ -52,7 +52,7 @@ function Footer() {
                     variants={startUp}
                     initial="init"
                     animate={playAnimation}
-                    transition = {{
+                    transition={{
                         duration: 0.3,
                         delay: 0.60
                     }}
