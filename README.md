@@ -4,14 +4,10 @@
 A Personal Portfolio Website containing projects, skills, and contacts.
 
 ## Table of Contents
-- [Access](#Access)
 - [Installation](#installation)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [License](#license)
-
-## Access
-Accessible from https://personal-portfolio-v2-five.vercel.app
 
 ## Installation
 1. Clone the repository: git clone https://github.com/Ama4538/Personal-PortfolioV2.git
